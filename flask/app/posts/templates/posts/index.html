@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Blueprint index page
+{% endblock %}
+
+{% block content_title %}
+    Афиша
+{% endblock %}
+
+{% block content %}
+
+    {% for post in pages.items %}
+
+        <p>
+            <a href = "{{ url_for ('posts.post_detail', slug=post.slug) }}"> {{ post.title }} </a>
+        </p>
+        <p><body><img src={{ post.picture }} alt="picture" height="400"></body></p>
+
+    {% endfor %}
+
+{% endblock %}

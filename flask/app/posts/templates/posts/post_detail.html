@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
+{% block content_title %}
+    {{ post.title }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="row">
+        <div class="col">
+            <body><img src={{ post.picture }} alt="picture" height="650"></body>
+        </div>
+
+        <div class="col">
+
+            <div class="main-content"><strong>Описание: </strong>{{ post.body }}</div>
+            <div class="main-content"><strong>Год: </strong>{{ post.year }}</div>
+            <div class="main-content"><strong>Время: </strong>{{ post.time }}</div>
+            <div class="main-content"><strong>Страна: </strong>{{ post.country }}</div>
+            <div class="main-content"><strong>Актеры: </strong>{{ post.actor }}</div>
+
+        </div>
+
+
+        </div>
+
+            {% if post.id==3 %}
+
+                <div class="bg-center">
+                        <div class="schedule-here">
+                            <p>
+                                <h4><span class="orang">Сеансы в кинотеатрах </span>
+                                    <span class="select" id="cities">
+                                        <span class="select-rounded">
+                                            <span class="bg-wrapper">
+                                                <span class="ico" onclick="dsplSelect('cities')">Киева
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </span><span class="today-date">на четверг <span class="orang">4 июня</span></span>
+                                </h4>
+                            </p>
+                            <div class="tabholder">
+
+                            <table class="film-sessions" cellspacing="0" cellpadding="0" border="0">
+                                    <p><span>Кинотеатр-</span><b>ZadniyРяд</b></p>
+                                    <p><span>Адрес: г. Киев, остров Муромец, </span><a class="on-map" href="https://xpark.kiev.ua/">Экстрим-парк X-PARK</a></a></p>
+                                </tr>
+
+                                <p>
+                                    <span class="subspan">Сеансы-</span><span>23:10</span>
+                                </p>
+
+
+                                </tbody></table>
+                        </div>
+                        </div>
+                </div>
+
+        {% endif %}
+{% endblock %}
